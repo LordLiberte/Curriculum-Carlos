@@ -194,11 +194,6 @@ def centro_pedidos():
             busca_google(pedido)
             continue
 
-        elif 'ingrid' in pedido:
-            hablar('Ingrid eres la más hermosa de este planeta y mi creador dice que te ama un montón (no le digas que'
-                   'te lo he dicho porfavor)')
-            continue
-
         lista_emociones_p = ['genial', 'bien', 'alegre', 'emocionado']
         lista_emociones_n_i = ['regular', 'mal', 'ansioso', 'nervioso', 'triste', 'disgustado']
         lista_emociones_m = ['enfadado']
