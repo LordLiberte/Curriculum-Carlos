@@ -162,33 +162,33 @@ def centro_pedidos():
             hablar('Buenas, estoy aquí para ayudarte en lo que necesites, prueba a decir: "abre el navegador"')
             continue
 
-        elif 'abrir' or 'buscar' or 'busca' in pedido:
+        if 'abrir' or 'buscar' or 'busca' in pedido:
             if 'youtube' in pedido:
                 hablar('Con gusto, estoy abriendo youtube')
                 webbrowser.open('https://www.youtube.com')
                 continue
-            elif 'google' or 'navegador' in pedido:
-                hablar('Con gusto, estoy abriendo google')
-                webbrowser.open('https://www.google.com')
-                continue
             elif 'spotify' in pedido:
                 hablar('Con gusto, estoy abriendo spotify')
                 os.system('spotify')
+            """elif 'google' or 'navegador' in pedido:
+                hablar('Con gusto, estoy abriendo google')
+                webbrowser.open('https://www.google.com')
+                continue"""
 
         elif 'escuchar música' in pedido:
             hablar('Dime la canción o albúm')
             pedido = transformar_audio_en_texto().lower()
             escuchar_musica(pedido)
 
-        elif 'qué día es' in pedido:
+        if 'qué día es' in pedido:
             pedir_dia()
             continue
 
-        elif 'qué hora es' in pedido:
+        if 'qué hora es' in pedido:
             pedir_hora()
             continue
 
-        elif 'busca en internet' in pedido:
+        if 'busca en internet' in pedido:
             hablar('A ello voy')
             pedido = pedido.replace('busca en internet', '')
             busca_google(pedido)
