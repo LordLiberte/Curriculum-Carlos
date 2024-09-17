@@ -1,12 +1,10 @@
 """Este documento trata de leer un archivo de texto y narrarlo con voz"""
 
 import pyttsx3
-import ocrmypdf
+import PyPDF2
 import os
 
-ruta = os.getcwd()
-archivo = "\Lector_Voz_Texto\Informe.pdf"
-ruta_archivo = ruta + archivo
+archivo = "C:\Repositorios GitHub\Curriculum-Carlos\En desarrollo\Lector_Voz_Texto\Informe.pdf"
 
 # inicialización de voz
 def inicializar_voz(texto):
@@ -17,11 +15,14 @@ def inicializar_voz(texto):
     
     engine.say(texto)
     engine.runAndWait()
+    
+def read_pdf(archivo):
+    pdf_file = open(archivo, 'rb')
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
+    page_obj = pdf_reader.pages[0]
+    texto = page_obj.extract_text()
+    return texto
 
-def ocr_texto(documento):
-    global ruta
-    input_pdf = documento
-    output_pdf = ruta + "\\Lector_Voz_Texto\\Informe2.pdf"
-    ocrmypdf.ocr(input_pdf, output_pdf, language='spa', optimize=3)
-
-ocr_texto(ruta_archivo)
+texto_leer = read_pdf(archivo)
+inicializar_voz(texto_leer)
+    
