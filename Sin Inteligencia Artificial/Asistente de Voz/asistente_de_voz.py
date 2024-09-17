@@ -167,10 +167,14 @@ def centro_pedidos():
                 hablar('Con gusto, estoy abriendo youtube')
                 webbrowser.open('https://www.youtube.com')
                 continue
+            elif 'google' in pedido or 'navegador' in pedido:
+                hablar('Con gusto, estoy abriendo google')
+                webbrowser.open('https://www.google.com')
+                continue
             elif 'spotify' in pedido:
                 hablar('Con gusto, estoy abriendo spotify')
                 os.system('spotify')
-            """elif 'google' or 'navegador' in pedido:
+            """elif 'google' in pedido or 'navegador' in pedido:
                 hablar('Con gusto, estoy abriendo google')
                 webbrowser.open('https://www.google.com')
                 continue"""
