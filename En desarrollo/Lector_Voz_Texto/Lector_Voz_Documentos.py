@@ -2,7 +2,6 @@
 
 import pyttsx3
 import PyPDF2
-import os
 
 archivo = "C:\Repositorios GitHub\Curriculum-Carlos\En desarrollo\Lector_Voz_Texto\Informe.pdf"
 
