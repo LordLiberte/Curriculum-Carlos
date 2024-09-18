@@ -110,7 +110,7 @@ def saludo_inicial():
 
     hora = datetime.datetime.now()
 
-    if 6 > hora.hour < 13:
+    if 6 < hora.hour < 13:
         momento = "Buenos días!"
     elif 13 <= hora.hour < 20:
         momento = "Buenas tardes!"
@@ -174,10 +174,6 @@ def centro_pedidos():
             elif 'spotify' in pedido:
                 hablar('Con gusto, estoy abriendo spotify')
                 os.system('spotify')
-            """elif 'google' in pedido or 'navegador' in pedido:
-                hablar('Con gusto, estoy abriendo google')
-                webbrowser.open('https://www.google.com')
-                continue"""
 
         elif 'escuchar música' in pedido:
             hablar('Dime la canción o albúm')
