@@ -4,7 +4,7 @@ import pyttsx3
 import PyPDF2
 
 # Ruta para el archivo a probar
-archivo = r"C:\Repositorios GitHub\Curriculum-Carlos\En desarrollo\Lector_Voz_Texto\Informe.pdf"
+archivo = r"C:\Repositorios GitHub\Curriculum-Carlos\Sin Inteligencia Artificial\Lector_Voz_Texto\HOLODOMOR 1932.pdf"
 
 # Abre el archivo PDF y lo lee
 try:
