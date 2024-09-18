@@ -9,11 +9,12 @@ archivo = r"C:\Repositorios GitHub\Curriculum-Carlos\Sin Inteligencia Artificial
 # Abre el archivo PDF y lo lee
 try:
     pdf_file = open(archivo, 'rb')
-    pdf_reader = PyPDF2.PdfReader(pdf_file)
-    paginas = len(pdf_reader.pages)
 except FileNotFoundError:
     print("El archivo no fue encontrado.")
     exit()
+else:
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
+    paginas = len(pdf_reader.pages)
 
 # Inicialización del motor de voz
 def inicializar_voz(pagina):
