@@ -24,7 +24,7 @@ def inicializar_voz(pagina):
     engine.setProperty('voice', voices[0].id)  # Cambia el índice si quieres otra voz; 0 = español, 1 = inglés
     
     # Ajuste de la velocidad de lectura
-    engine.setProperty('rate', 250)  # Puedes ajustar la velocidad, aumentar el numero aumenta la velocidad
+    engine.setProperty('rate', 200)  # Puedes ajustar la velocidad, aumentar el numero aumenta la velocidad
     
     # Inicia la lectura del input que recibe en página
     engine.say(pagina)
