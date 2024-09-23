@@ -61,16 +61,16 @@ model_xgb = xgb.XGBRegressor(random_state=42)
 
 # Ajustar hiperparámetros con GridSearchCV
 param_grid_gb = {
-    'n_estimators': [100, 150],
-    'learning_rate': [0.41, 0.95],
-    'max_depth': [3, 8]
+    'n_estimators': [50, 100],
+    'learning_rate': [0.2, 0.5],
+    'max_depth': [3, 5]
 }
 grid_gb = GridSearchCV(model_gb, param_grid_gb, cv=5, scoring='neg_mean_squared_error')
 grid_gb.fit(X_train, y_train_log)
 
 param_grid_rf = {
-    'n_estimators': [80, 70],
-    'min_samples_leaf': [10, 20]
+    'n_estimators': [10, 40],
+    'min_samples_leaf': [50, 10]
 }
 grid_rf = GridSearchCV(model_rf, param_grid_rf, cv=5, scoring='neg_mean_squared_error')
 grid_rf.fit(X_train, y_train_log)
