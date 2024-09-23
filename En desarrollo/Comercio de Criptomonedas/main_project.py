@@ -170,13 +170,15 @@ future_dates_df['std_high_low'] = current_std_high_low  # Usar desviación está
 future_dates_df['moving_average'] = current_moving_average  # Usar media móvil actual
 
 # Escalar las características de acuerdo con el escalador entrenado
+# Asegúrate de que el escalador se ha ajustado a las características de entrenamiento previamente
 scaler = MinMaxScaler()
 scaler.fit(btc_df_copy[['std_high_low', 'moving_average']])  # Ajustar a las características de entrenamiento
 future_features = future_dates_df[['std_high_low', 'moving_average']].to_numpy()
-scaled_features = scaler.transform(future_features)  # Transformar las características futuras
+future_features_scaled = scaler.transform(future_features)  # Transformar características
 
-# Añadir las características no escaladas
-future_features_full = np.hstack([scaled_features, future_dates_df[['month', 'day_of_week']].to_numpy()])
+# Concatenar características escaladas con 'month' y 'day_of_week'
+future_features_full = np.hstack([future_features_scaled, 
+                                   future_dates_df[['week']].to_numpy()])
 
 # Generar predicciones usando el meta-modelo
 future_predictions_log = meta_model.predict(future_features_full)
@@ -200,4 +202,5 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.grid(True)
 plt.show()
+
 
