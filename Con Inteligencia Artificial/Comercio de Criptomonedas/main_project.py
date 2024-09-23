@@ -12,7 +12,7 @@ import xgboost as xgb
 
 # DATA READING AND EXPLORATION
 ruta = os.getcwd()
-archive = pd.read_csv(f'{ruta}\\En desarrollo\\Comercio de Criptomonedas\\dataset.csv')
+archive = pd.read_csv(f'{ruta}\\Con Inteligencia Artificial\\Comercio de Criptomonedas\\dataset.csv')
 df = pd.DataFrame(archive)
 
 # Date data transformation

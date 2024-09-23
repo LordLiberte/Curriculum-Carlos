@@ -50,7 +50,7 @@ X = df_entreno_filtrado.drop(['passenger_count'], axis=1)
 y = df_entreno_filtrado['passenger_count']
 
 X_entreno, X_test, y_entreno, y_test = train_test_split(X, y, test_size=0.8, random_state=42)
-arbol_de_decisiones = RandomForestRegressor(random_state=42)
+arbol_de_decisiones = RandomForestRegressor(random_state=42, max_depth=10)
 # entrenamiento
 arbol_de_decisiones.fit(X_entreno, y_entreno)
 
