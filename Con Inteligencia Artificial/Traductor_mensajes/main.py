@@ -15,7 +15,6 @@ while True:
     iniciar = input("¿Desea iniciar la aplicación de traducción? ")
     if iniciar.lower() == "si" or "sí":  # Uso lower() para evitar problemas con mayúsculas
         texto = md.audio_texto()  # Llamada a la función en modules_pr, guardamos en una variable para poder traducir
-        print(texto)
         traduccion = md.traducir(texto, api_key)
         md.hablar(traduccion)
     else:
