@@ -14,6 +14,8 @@ api_key = os.getenv('API_KEY_DeepL')
 while True:
     iniciar = input("Desea traducir algo por voz? [Si/No] ")
     if iniciar.lower() == "si":  # Uso lower() para evitar problemas con mayúsculas
-        md.audio_texto()  # Llamada a la función en modules_pr
+        texto = md.audio_texto()  # Llamada a la función en modules_pr, guardamos en una variable para poder traducir
+        traduccion = md.traducir(texto, api_key)
+        md.hablar(traduccion)
     else:
         break
